@@ -1370,3 +1370,10 @@ textarea:focus {
     padding-left: 30px; }
 
 /*# sourceMappingURL=style.css.map */
+
+/* CSS Adicionais*/
+.formata-imagem{
+  max-width: 100%;
+  width: 330px;
+  height: 200px; 
+}

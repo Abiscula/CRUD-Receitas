@@ -4,7 +4,7 @@ from .models import Receita
 def index(request):
 
     dados = {
-        'receitas': Receita.objects.filter(publicada=True)
+        'receitas': Receita.objects.order_by('-data_receita').filter(publicada=True) #recupera os dados do banco de acordo com os filtros
     }
     
     return render(request, 'index.html', dados)
