@@ -17,3 +17,18 @@ def receita(request, receita_id): # recupera o id passado pela url
     }
     
     return render(request, 'receita.html', receita_a_exibir)
+
+def buscar(request):
+    lista_receitas = Receita.objects.order_by('-data_receita').filter(publicada=True)
+    
+    if 'buscar' in request.GET: #verifica se existe o buscar na requisição    
+        nome_a_buscar = request.GET['buscar'] #recupera o nome digitado pela URL
+        if buscar:
+            lista_receitas = lista_receitas.filter(nome_receita__icontains=nome_a_buscar) #verifica se o nome buscado existe na lista
+        
+    dados = {
+        'receitas': lista_receitas
+    }
+        
+    return render(request, 'buscar.html', dados)
+    
