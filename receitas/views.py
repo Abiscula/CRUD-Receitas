@@ -7,7 +7,7 @@ def index(request):
         'receitas': Receita.objects.order_by('-data_receita').filter(publicada=True) #recupera os dados do banco de acordo com os filtros
     }
     
-    return render(request, 'index.html', dados)
+    return render(request, 'receitas/index.html', dados)
 
 
 def receita(request, receita_id): # recupera o id passado pela url
@@ -16,7 +16,7 @@ def receita(request, receita_id): # recupera o id passado pela url
         'receita': get_object_or_404(Receita, pk=receita_id)
     }
     
-    return render(request, 'receita.html', receita_a_exibir)
+    return render(request, 'receitas/receita.html', receita_a_exibir)
 
 def buscar(request):
     lista_receitas = Receita.objects.order_by('-data_receita').filter(publicada=True)
@@ -30,5 +30,5 @@ def buscar(request):
         'receitas': lista_receitas
     }
         
-    return render(request, 'buscar.html', dados)
+    return render(request, 'receitas/buscar.html', dados)
     
