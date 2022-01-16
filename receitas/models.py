@@ -1,11 +1,10 @@
 from django.db import models
 from datetime import datetime
-
 from django.db.models.deletion import CASCADE
-from pessoas.models import Pessoa
+from django.contrib.auth.models import User
 
 class Receita(models.Model):
-    pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
+    pessoa = models.ForeignKey(User, on_delete=models.CASCADE)
     nome_receita = models.CharField(max_length=200) # cria campo do tipo char com máximo 200 caracteres
     ingredientes = models.TextField() # cria campo do tipo texto
     modo_preparo = models.TextField()
