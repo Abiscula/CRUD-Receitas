@@ -2,7 +2,7 @@
 
 ### *Projeto em desenvolvimento*
 
-Este site está sendo desenvolvido durante seguindo os cursos de formação de Django da Alura.
+Este site está sendo desenvolvido durante o acompanhamento dos cursos de formação de Django da Alura.
 
 O projeto consinste em uma aplicação CRUD desenvolvida com o framework Django e a linguagem de programação JavaScript, além das linguagens de marcação HTML e CSS. O Banco de dados escolhido para este site é o PostgreSql.
 
